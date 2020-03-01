@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Posts renders without crashing 1`] = `
+<ul>
+  <li
+    key="0"
+  >
+    subreddit 1
+  </li>
+  <li
+    key="1"
+  >
+    subreddit 2
+  </li>
+  <li
+    key="2"
+  >
+    subreddit 3
+  </li>
+</ul>
+`;
