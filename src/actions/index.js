@@ -20,7 +20,7 @@ export function selectSubreddit(subreddit) {
 }
 
 
-export function invalidSubreddit(subreddit) {
+export function invalidateSubreddit(subreddit) {
     return {
         type: INVALID_SUBREDDIT,
         subreddit
@@ -44,6 +44,7 @@ export function receivePosts(subreddit, json) {
         receiveAt: Date.now()
     }
 }
+
 
 function shouldFetchPosts(state, subreddit) {
     const posts = state.postsBySubreddit[subreddit];
@@ -74,6 +75,7 @@ export function fetchPosts(subreddit) {
         ).then(json => dispatch(receivePosts(subreddit, json)));
     }
 }
+
 
 export function fetchPostsIfNeeded(subreddit) {
 

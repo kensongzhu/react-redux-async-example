@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Picker should render without crashing 1`] = `
+<span>
+  <h1>
+    frontend
+  </h1>
+  <select
+    onChange={[Function]}
+    value="frontend"
+  >
+    <option
+      key="frontend"
+      value="frontend"
+    >
+      frontend
+    </option>
+    <option
+      key="react"
+      value="react"
+    >
+      react
+    </option>
+    <option
+      key="redux"
+      value="redux"
+    >
+      redux
+    </option>
+  </select>
+</span>
+`;

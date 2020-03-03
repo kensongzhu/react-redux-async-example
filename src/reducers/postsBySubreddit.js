@@ -11,12 +11,15 @@ function posts(state = initialState, action) {
         case INVALID_SUBREDDIT:
             return {...state, didInvalidate: true};
         case REQUEST_POSTS:
-            return {...state, isFetching: true};
+            return {...state, isFetching: true, didInvalidate: false};
         case RECEIVE_POSTS:
             return {
                 ...state,
+                isFetching: false,
+                didInvalidate: false,
                 items: action.posts,
-                lastUpdated: action.receiveAt};
+                lastUpdated: action.receiveAt
+            };
         default:
             return state
     }

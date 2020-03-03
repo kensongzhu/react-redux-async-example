@@ -1,5 +1,5 @@
 import reducer from "../postsBySubreddit";
-import {invalidSubreddit, receivePosts, requestPosts} from "../../actions";
+import {invalidateSubreddit, receivePosts, requestPosts} from "../../actions";
 
 // mock date in ms
 const mockDate = 1482363367071;
@@ -11,8 +11,8 @@ describe('postsBySubreddit reducer', () => {
         expect(reducer(undefined, {})).toEqual({})
     });
 
-    test('should handle invalid subreddit', () => {
-        expect(reducer(undefined, invalidSubreddit('frontend'))).toEqual({
+    test('should handle invalidate subreddit', () => {
+        expect(reducer(undefined, invalidateSubreddit('frontend'))).toEqual({
             "frontend": {
                 didInvalidate: true,
                 isFetching: false,
