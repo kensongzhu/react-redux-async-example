@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Reddit App should render without crashing 1`] = `
+<ContextProvider
+  value={null}
+>
+  <RedditApp
+    dispatch={[Function]}
+    isFetching={true}
+    posts={Array []}
+    selectedSubreddit="frontend"
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+  />
+</ContextProvider>
+`;
