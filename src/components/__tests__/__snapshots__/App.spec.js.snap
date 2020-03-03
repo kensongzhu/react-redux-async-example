@@ -1,5 +1,56 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`App Component should render last updated and the posts 1`] = `
+<div>
+  <Picker
+    onChange={[MockFunction]}
+    options={
+      Array [
+        "reactjs",
+        "frontend",
+      ]
+    }
+    value="frontend"
+  />
+  <p>
+    <span>
+      Last update at 
+      12/22/2016
+      .
+       
+    </span>
+    <button
+      onClick={[MockFunction]}
+    >
+      Refresh
+    </button>
+  </p>
+  <div
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+  >
+    <Posts
+      posts={
+        Array [
+          Object {
+            "title": "frontend post 1",
+          },
+          Object {
+            "title": "frontend post 2",
+          },
+          Object {
+            "title": "frontend post 3",
+          },
+        ]
+      }
+    />
+  </div>
+</div>
+`;
+
 exports[`App Component should render without crashing 1`] = `
 <div>
   <Picker
@@ -13,7 +64,6 @@ exports[`App Component should render without crashing 1`] = `
     value="frontend"
   />
   <p>
-    .
     <button
       onClick={[MockFunction]}
     >

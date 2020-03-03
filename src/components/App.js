@@ -28,8 +28,7 @@ export default class App extends React.Component {
 					<span>
 						Last update at {new Date(lastUpdated).toLocaleDateString()}.{' '}
 					</span>
-					}.
-
+					}
 					{!isFetching && <button onClick={handleRefreshClick}>Refresh</button>}
 				</p>
 				{isEmpty
