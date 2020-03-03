@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './containers/App';
+import RedditApp from './containers/RedditApp';
 import * as serviceWorker from './serviceWorker';
 import {Provider} from "react-redux";
 
@@ -34,7 +34,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 ReactDOM.render(
 	<Provider store={store}>
-		<App/>
+		<RedditApp/>
 	</Provider>,
 	document.getElementById('root')
 );

@@ -1,10 +1,9 @@
 import React from "react";
-import Picker from "../components/Picker";
-import Posts from "../components/Posts";
 import {connect} from "react-redux";
+import App from "../components/App";
 import {fetchPostsIfNeeded, invalidateSubreddit, selectSubreddit} from "../actions";
 
-class App extends React.Component {
+class RedditApp extends React.Component {
 
 	componentDidMount() {
 		const {dispatch, selectedSubreddit} = this.props;
@@ -32,39 +31,17 @@ class App extends React.Component {
 	};
 
 	render() {
-		const {selectedSubreddit, posts, isFetching, lastUpdated} = this.props;
-		const isEmpty = posts.length === 0;
-
-		return (
-			<div>
-				<Picker
-					value={selectedSubreddit}
-					onChange={this.handleChange}
-					options={['reactjs', 'frontend']}
-				/>
-				<p>
-					{lastUpdated &&
-					<span>
-						Last update at {new Date(lastUpdated).toLocaleDateString()}.{' '}
-					</span>
-					}.
-
-					{!isFetching && <button onClick={this.handleRefreshClick}>Refresh</button>}
-				</p>
-				{isEmpty
-					? (isFetching ? <h2>Loading...</h2> : <h2>Empty.</h2>)
-					: <div style={{opacity: isFetching ? 0.5 : 1}}>
-						<Posts posts={posts}/>
-					</div>
-				}
-			</div>
-		)
+		const props = {...this.props, handleRefreshClick: this.handleRefreshClick, handleChange: this.handleChange};
+		return <App {...props} />
 	}
 }
 
 const mapStateToProps = state => {
 	const {selectedSubreddit, postsBySubreddit} = state;
-	const {isFetching, lastUpdated, items: posts} = postsBySubreddit[selectedSubreddit] || {isFetching: true, items: []}
+	const {isFetching, lastUpdated, items: posts} = postsBySubreddit[selectedSubreddit] || {
+		isFetching: true,
+		items: []
+	};
 	return {
 		selectedSubreddit,
 		posts,
@@ -74,4 +51,4 @@ const mapStateToProps = state => {
 };
 
 
-export default connect(mapStateToProps)(App)
+export default connect(mapStateToProps)(RedditApp)

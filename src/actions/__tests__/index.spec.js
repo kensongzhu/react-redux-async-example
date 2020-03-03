@@ -7,7 +7,7 @@ const mockStore = configureStore(middleware);
 const mockDate = 1482363367071;
 Date.now = jest.fn(() => mockDate);
 
-describe("async actions", () => {
+describe("actions", () => {
     afterEach(() => {
         fetch.resetMocks();
     });

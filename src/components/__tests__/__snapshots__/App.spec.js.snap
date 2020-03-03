@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Component should render without crashing 1`] = `
+<div>
+  <Picker
+    onChange={[MockFunction]}
+    options={
+      Array [
+        "reactjs",
+        "frontend",
+      ]
+    }
+    value="frontend"
+  />
+  <p>
+    .
+    <button
+      onClick={[MockFunction]}
+    >
+      Refresh
+    </button>
+  </p>
+  <h2>
+    Empty.
+  </h2>
+</div>
+`;
